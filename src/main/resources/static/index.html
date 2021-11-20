@@ -24,7 +24,7 @@
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
                     <h1 class="fst-italic lh-1 mb-4">re U</h1>
-                    <p class="mb-5">다시 당신과 함께</p>
+                    <p class="mb-5">: 다시 당신과 함께</p>
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
                     <!-- * * * * * * * * * * * * * * *-->
@@ -32,7 +32,7 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form action="localhost:9000/app/users/log-in" id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
                             <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
@@ -54,9 +54,7 @@
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3 mt-2">
                                 <div class="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+
                             </div>
                         </div>
                         <!-- Submit error message-->
@@ -72,9 +70,9 @@
         <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
         <div class="social-icons">
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-                <a class="btn btn-dark m-3" href="http://localhost:9000/sign-up">sign up</a>
-                <a class="btn btn-dark m-3" href="http://localhost:9000/sign-up">image</a>
-                <a class="btn btn-dark m-3" href="http://localhost:9000/app/users/sign-up">mypage</a>
+                <a class="btn btn-dark m-3" href="signup.html">sign up</a>
+                <a class="btn btn-dark m-3" href="image.html">image</a>
+                <a class="btn btn-dark m-3" href="mypage.html">mypage</a>
             </div>
         </div>
         <!-- Bootstrap core JS-->

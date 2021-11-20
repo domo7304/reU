@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
 <!-- Masthead-->
 <div class="masthead">
     <div class="masthead-content text-white">
         <div class="container-fluid px-4 px-lg-0">
-            <h1 class="fst-italic lh-1 mb-4">sign up</h1>
+            <h1 class="fst-italic lh-1 mb-4">Sign Up</h1>
             <!-- * * * * * * * * * * * * * * *-->
             <!-- * * SB Forms Contact Form * *-->
             <!-- * * * * * * * * * * * * * * *-->
@@ -17,6 +18,7 @@
             <!-- To make this form functional, sign up at-->
             <!-- https://startbootstrap.com/solution/contact-forms-->
             <!-- to get an API token!-->
+            <div>
             <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                 <!-- Email address input-->
                 <div class="row input-group-newsletter">
@@ -32,7 +34,7 @@
                 </div>
                 <br/>
                 <div class="row input-group-newsletter">
-                    <div class="col"><input class="form-control" id="password" type="password" placeholder="Enter password..." aria-label="Enter password" data-sb-validations="required,password" /></div>
+                    <div class="col"><input class="form-control" id="password" type="password" placeholder="Enter password" aria-label="Enter password" data-sb-validations="required,password" /></div>
                 </div>
                 <br/>
                 <div class="row input-group-newsletter">
@@ -42,27 +44,15 @@
                 <div class="row input-group-newsletter">
                     <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">JOIN</button></div>
                 </div>
-                <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
-                <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted 성공하면-->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center mb-3 mt-2">
-                        <div class="fw-bolder">Form submission successful!</div>
-                        To activate this form, sign up at
-                        <br />
-                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                    </div>
-                </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
-                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
             </form>
+            </div>
         </div>
+    </div>
+</div>
+
+<div class="social-icons">
+    <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
+        <a class="btn btn-dark m-3" href="./index.html">back</a>
     </div>
 </div>
 
