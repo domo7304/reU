@@ -30,10 +30,10 @@ public class UserDao {
                 postUserReq.getPhoneNum()};
         this.jdbcTemplate.update(createUserQuery, createUserParams);
 
-        // 가장 마지막에 삽입된(생성된) id값은 가져온다.
-        String lastInsertIdQuery = "select last_insert_id()";
-        // 해당 쿼리문의 결과 마지막으로 삽인된 유저의 userId 반환
-        return this.jdbcTemplate.queryForObject(lastInsertIdQuery, int.class);
+        // 가장 마지막에 삽입된(생성된) idx값은 가져온다.
+        String lastInsertIdxQuery = "select last_insert_id()";
+        // 해당 쿼리문의 결과 마지막으로 삽인된 유저의 userIdx 반환
+        return this.jdbcTemplate.queryForObject(lastInsertIdxQuery, int.class);
     }
 
     // 이메일 확인
