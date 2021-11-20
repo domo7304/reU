@@ -7,5 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 public class PostPredictReq {
     private String imgname;
-    private String imagDir;
+    private String imgDir;
+    private String imgClass;
 }

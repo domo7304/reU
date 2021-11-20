@@ -6,5 +6,5 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 public class PostPredictRes {
-    private String imgClass;
+    private int imgIdx;
 }

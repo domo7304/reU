@@ -2,6 +2,7 @@ package com.team8.ecommerce.src.Image;
 
 import com.team8.ecommerce.config.BaseException;
 import com.team8.ecommerce.config.BaseResponse;
+import com.team8.ecommerce.src.Image.model.GetImgRes;
 import com.team8.ecommerce.src.Image.model.PostPredictReq;
 import com.team8.ecommerce.src.Image.model.PostPredictRes;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,18 @@ public class ImageController {
         try {
             PostPredictRes postPredictRes = imageService.predictImg(postPredictReq);
             return new BaseResponse<>(postPredictRes);
+        } catch (BaseException exception){
+            return new BaseResponse<>((exception.getStatus()));
+        }
+    }
+
+    // path variable에 해당하는 이미지 조회 API
+    @ResponseBody
+    @GetMapping("/{imgIdx}")
+    public BaseResponse<GetImgRes> getImages(@PathVariable("imgIdx") int imgIdx){
+        try {
+            GetImgRes getImgRes = imageProvider.getImg(imgIdx);
+            return new BaseResponse<>(getImgRes);
         } catch (BaseException exception){
             return new BaseResponse<>((exception.getStatus()));
         }
