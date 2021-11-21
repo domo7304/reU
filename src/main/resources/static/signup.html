@@ -17,6 +17,7 @@
           rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
 <!-- Masthead-->
@@ -94,6 +95,49 @@
         <a class="btn btn-dark m-3" href="./index.html">back</a>
     </div>
 </div>
+
+<script>
+    $(function() {
+        $('#submitButton').mouseenter(function() {
+            $(this).css('cursor','pointer') ;
+        }).mouseout(function() {
+            $(this).css('cursor','normal') ;
+        }).click(function() {
+            submitCheck() ;
+        }) ;
+    }) ;
+
+    function submitCheck() {
+        var username  = $('#username').val() ;
+        var nickname  = $('#nickname').val() ;
+        var email  = $('#email').val() ;
+        var password  = $('#password').val() ;
+        var phoneNum = $('#phoneNum').val() ;
+        var dd = {username:username, nickname: nickname, email:email, password:password, phoneNum:phoneNum};
+        $.ajax({
+            type : "POST",
+            url: 'app/users/sign-up',
+            data: JSON.stringify(dd),
+            dataType : "json",
+            contentType: "application/json",
+
+            success: function(data) {
+                console.log(data);
+                alert('success') ;
+                //location.href="${./index.html}" ;
+            },
+            error: function (e){
+                alert('fail') ;
+            }
+        }) ;
+    }
+
+    $('.loginInput').keydown(function(key) {
+        if(key.keyCode == 13) {
+            $('#submitButton').click() ;
+        }
+    }) ;
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
