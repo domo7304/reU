@@ -24,7 +24,7 @@
             <h1 class="fst-italic lh-1 mb-4">Image Classification</h1>
 
 
-               <form action="#" id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" enctype = "multipart/form-data" onsubmit="javascript:check();">  <!--onsubmit 그냥 확인용 -->
+               <form action="http://localhost:9000/app/images/predict" id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" enctype = "multipart/form-data" onsubmit="javascript:check();">  <!--onsubmit 그냥 확인용 -->
                    <input type="file" name="file" id = "file" data-sb-validations="required"/>
                    <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
 

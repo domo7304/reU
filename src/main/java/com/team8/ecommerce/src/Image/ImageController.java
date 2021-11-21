@@ -7,6 +7,10 @@ import com.team8.ecommerce.src.Image.model.PostPredictReq;
 import com.team8.ecommerce.src.Image.model.PostPredictRes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/app/images")
@@ -24,10 +28,12 @@ public class ImageController {
     // ************************************************************************************
 
     // 추론 API
-    @ResponseBody
     @PostMapping("/predict")
-    public BaseResponse<PostPredictRes> predictImg(@RequestBody PostPredictReq postPredictReq){
+    public BaseResponse<PostPredictRes> predictImg(@RequestParam("file") MultipartFile file) throws IOException {
+        String dir = "C:\\Users\\lee\\Desktop\\Laptop\\img\\";
+        file.transferTo(new File(dir + file.getOriginalFilename()));
         try {
+            PostPredictReq postPredictReq = new PostPredictReq(file.getOriginalFilename(), dir + file.getOriginalFilename(), "");
             PostPredictRes postPredictRes = imageService.predictImg(postPredictReq);
             return new BaseResponse<>(postPredictRes);
         } catch (BaseException exception){

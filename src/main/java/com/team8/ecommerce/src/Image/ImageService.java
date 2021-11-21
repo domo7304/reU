@@ -5,6 +5,8 @@ import com.team8.ecommerce.src.Image.model.PostPredictReq;
 import com.team8.ecommerce.src.Image.model.PostPredictRes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
 
 import static com.team8.ecommerce.config.BaseResponseStatus.DATABASE_ERROR;
 import static com.team8.ecommerce.config.BaseResponseStatus.SERVER_ERROR;
@@ -23,17 +25,17 @@ public class ImageService {
     // 추론 (POST)
     public PostPredictRes predictImg(PostPredictReq postPredictReq) throws BaseException{
         // 우선 추론 진행
-        // 임시로 테스트 했다고 가정하고 set
-        postPredictReq.setImgClass("test");
+        RestTemplate restTemplate = new RestTemplate();
+        postPredictReq = restTemplate.postForObject("http://localhost:5000/fileUpload", postPredictReq, PostPredictReq.class);
 
-        // 추론 완료 후 imgClass까지 받아왔다면 데이터베이스에 저장하고
+        // 추론 완료 후 imgClass 값까지 저장하여 postPredictReq DTO 다 채웠으면 데이터베이스에 저장하고
         // 프론트 추후 작업을 위해 imgIdx 다시 보내주기
         try {
             int imgIdx = imageDao.saveImg(postPredictReq);
             return new PostPredictRes(imgIdx);
         } catch (Exception exception){
             // throw new BaseException(DATABASE_ERROR);
-            throw new BaseException(SERVER_ERROR); // 어디서 에러나는지 확인하게 여기는 서버에러로 대체
+            throw new BaseException(SERVER_ERROR);
         }
     }
 }

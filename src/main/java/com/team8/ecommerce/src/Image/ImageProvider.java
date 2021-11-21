@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import static com.team8.ecommerce.config.BaseResponseStatus.DATABASE_ERROR;
-import static com.team8.ecommerce.config.BaseResponseStatus.SERVER_ERROR;
+
 
 @Service
 public class ImageProvider {
@@ -25,8 +25,7 @@ public class ImageProvider {
             GetImgRes getImgRes = imageDao.getImg(imgIdx);
             return getImgRes;
         } catch (Exception exception){
-            // throw  new BaseException(DATABASE_ERROR);
-            throw new BaseException(SERVER_ERROR); // 어디서 에러나는지 확인하게 여기는 서버에러로 대체
+            throw  new BaseException(DATABASE_ERROR);
         }
     }
 }
