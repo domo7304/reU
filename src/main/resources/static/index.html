@@ -32,14 +32,14 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form action="localhost:9000/app/users/log-in" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form action="#" id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
-                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address" aria-label="Enter email address" data-sb-validations="required" /></div>
                         </div>
                         <br/>
                         <div class="row input-group-newsletter">
-                            <div class="col"><input class="form-control" id="password" type="password" placeholder="Enter password..." aria-label="Enter password..." data-sb-validations="required,password" /></div>
+                            <div class="col"><input class="form-control" id="password" type="password" placeholder="Enter password" aria-label="Enter password" data-sb-validations="required" /></div>
                         </div>
                         <br/>
                         <div class="row input-group-newsletter">
@@ -47,6 +47,9 @@
                         </div>
                         <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
                         <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
+
+                        <div class="invalid-feedback mt-2" data-sb-feedback="password:required">An pw is required.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="password:password">pw is not valid.</div>
                         <!-- Submit success message-->
                         <!---->
                         <!-- This is what your users will see when the form-->
@@ -60,7 +63,7 @@
                         <!-- Submit error message-->
                         <!---->
                         <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
+                        <!-- an error submitting the formm-->
                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
                     </form>
                 </div>
