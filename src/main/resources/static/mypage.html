@@ -1,4 +1,3 @@
-<!--request-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Image Upload</title>
     <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
 <!-- Masthead-->
@@ -13,15 +13,9 @@
     <div class="masthead-content text-white">
         <div class="container-fluid px-4 px-lg-0">
             <h1 class="fst-italic lh-1 mb-4">My Page</h1>
-
             <div>
-                <h2>${username}</h2>
-                <h4>${point} point</h4>
-                <br/>
-                <br/>
-                <h4>${email}</h4>
-                <h4>${password}</h4>
-                <h4>${phoneNum}</h4>
+                <h2>아직 준비중입니다.</h2>
+
             </div>
         </div>
     </div>
@@ -29,8 +23,50 @@
 
 <div class="social-icons">
     <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-        <a class="btn btn-dark m-3" href="./index.html">back</a>
+        <a class="btn btn-dark m-3" href="./">back</a>
     </div>
 </div>
+
+<script>
+    $(function() {
+        $('#submitButton').mouseenter(function() {
+            $(this).css('cursor','pointer') ;
+        }).mouseout(function() {
+            $(this).css('cursor','normal') ;
+        }).click(function() {
+            submitCheck() ;
+        }) ;
+    }) ;
+
+    function submitCheck() {
+        var email  = $('#email').val() ;
+        var password = $('#password').val() ;
+        var dd = {email:email, password:password};
+
+        $.ajax({
+            type : "POST",
+            url: 'app/users/log-in',
+            data: JSON.stringify(dd),
+            dataType : "json",
+            contentType: "application/json",
+
+            success: function(data) {
+                console.log(data.type);
+                alert('성공') ;
+
+            },
+            error: function (e){
+                alert('잘못된 아이디이거나, 비밀번호가 틀렸습니다.') ;
+                location.href="${./}" ;
+            }
+        }) ;
+    }
+
+    $('.loginInput').keydown(function(key) {
+        if(key.keyCode == 13) {
+            $('#submitButton').click() ;
+        }
+    }) ;
+</script>
 </body>
 </html>
