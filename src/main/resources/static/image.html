@@ -26,7 +26,8 @@
 
                <form action="http://localhost:9000/app/images/predict" id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" enctype = "multipart/form-data" onsubmit="javascript:check();">  <!--onsubmit 그냥 확인용 -->
                    <input type="file" name="file" id = "file" data-sb-validations="required"/>
-                   <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
+                   <input type="submit">
+                   <!--<button class="btn btn-primary" id="submitButton" type="submit">Submit</button>-->
 
                    <div class="invalid-feedback mt-2" data-sb-feedback="file:required">.</div>
                    <div class="invalid-feedback mt-2" data-sb-feedback="file:file"></div>
@@ -52,10 +53,6 @@
 </div>
 
 <script>
-    function check(){ <!--그냥 확인용 -->
-        var hh = "hh"
-        prompt(hh);
-    }
 </script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
