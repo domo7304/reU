@@ -31,8 +31,8 @@ public class ImageService {
         // 추론 완료 후 imgClass 값까지 저장하여 postPredictReq DTO 다 채웠으면 데이터베이스에 저장하고
         // 프론트 추후 작업을 위해 imgIdx 다시 보내주기
         try {
-            int imgIdx = imageDao.saveImg(postPredictReq);
-            return new PostPredictRes(imgIdx);
+            PostPredictRes postPredictRes = imageDao.saveImg(postPredictReq);
+            return postPredictRes;
         } catch (Exception exception){
             // throw new BaseException(DATABASE_ERROR);
             throw new BaseException(SERVER_ERROR);

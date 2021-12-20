@@ -7,4 +7,8 @@ import lombok.*;
 @AllArgsConstructor
 public class PostPredictRes {
     private int imgIdx;
+    private String imgname;
+    private String imgDir;
+    private String imgClass;
+    private String status;
 }
